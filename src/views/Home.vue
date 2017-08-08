@@ -1,12 +1,14 @@
 <template>
     <div>
         <div class="content">
-            <keep-alive>
-                <router-view></router-view>
-            </keep-alive>
+            <transition :name="transitionName">
+                <keep-alive>
+                    <router-view class="Router"></router-view>
+                </keep-alive>
+            </transition>
         </div>
         <tabbar class="tabbarTheme">
-            <tabbar-item selected link="/home/main"> 
+            <tabbar-item selected link="/home/main">
                 <img slot="icon" src="../assets/tabbarIcon/main.png">
                 <span slot="label">发现音乐</span>
             </tabbar-item>
@@ -27,7 +29,7 @@
 </template>
 
 <script>
-window.onresize = function() {
+window.onresize = function () {
     location.reload();
     document.getElementsByTagName('body')[0].style.height = document.documentElement.clientHeight + 'px';
     document.getElementsByTagName('body')[0].style.width = document.documentElement.clientWidth + 'px';
@@ -42,57 +44,98 @@ export default {
     },
     data() {
         return {
-
+            transitionName: 'slide-right'  // 默认动态路由变化为slide-right
+        }
+    },
+    watch: {
+        '$route'(to, from) {
+            let isBack = this.$router.isBack  //  监听路由变化时的状态为前进还是后退
+            if (isBack) {
+                this.transitionName = 'slide-right'
+            } else {
+                this.transitionName = 'slide-left'
+            }
+            this.$router.isBack = false
         }
     },
     methods: {
 
     },
     mounted() {
-        
+
     }
 }
 </script>
 
 <style scoped lang="less">
 @import "../assets/style/common.less";
-    .tabbarTheme{
-        background-color: @TabbarTheme;
-        opacity: .8;
-    }
-    // transition 动画
-    .fade-enter-active, .fade-leave-active {
-        transition: opacity .3s;
-        opacity: 0;
-    }
-    .fade-enter, .fade-leave-to /* .fade-leave-active in below version 2.1.8 */ {
-        opacity: 0;
-    }
+.tabbarTheme {
+    background-color: @TabbarTheme;
+    opacity: .8;
+} // transition 动画
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity .3s;
+    opacity: 0;
+}
+
+.fade-enter,
+.fade-leave-to
+/* .fade-leave-active in below version 2.1.8 */
+
+{
+    opacity: 0;
+}
+
+.Router {
+    position: absolute;
+    width: 100%;
+    transition: all .5s ease;
+}
+
+.slide-left-enter,
+.slide-right-leave-active {
+    -webkit-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+}
+
+.slide-left-leave-active,
+.slide-right-enter {
+    -webkit-transform: translate(-100%, 0);
+    transform: translate(-100% 0);
+}
 </style>
 <style>
-    body {
-        overflow: hidden;
-    }
-     .header {
-        height: 7vh;
-    }
-    .content {
-        height: 93vh;
-        overflow-y: scroll; 
-    }
-    .vux-header-right {
-        top: 10px!important;
-        right: 10px!important;
-    }
-    .musicHouse {
-        background-image:  url('../assets/tabbarIcon/musicHouse.png');
-        background-size: 27px 27px;
-        display: inline-block;
-        width: 27px;
-        height: 27px;
-        text-indent: 10000px;
-        overflow: hidden;
-    }
-    input::-webkit-input-placeholder { text-align: center; }
+body {
+    overflow: hidden;
+}
+
+.header {
+    height: 7vh;
+}
+
+.content {
+    height: 93vh;
+    overflow-y: scroll;
+}
+
+.vux-header-right {
+    top: 10px!important;
+    right: 10px!important;
+}
+
+.musicHouse {
+    background-image: url('../assets/tabbarIcon/musicHouse.png');
+    background-size: 27px 27px;
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+    text-indent: 10000px;
+    overflow: hidden;
+}
+
+input::-webkit-input-placeholder {
+    text-align: center;
+}
 </style>
 

@@ -21,6 +21,11 @@ const router = new VueRouter({
     mode: 'history',
     routes
 })
+// 重点，给VueRoute添加一个goBack方法，用于记录路由的前进后退状态 this.isBack = true 
+VueRouter.prototype.goBack = function () { 
+　　this.isBack = true
+　　window.history.go(-1)
+}
 
 FastClick.attach(document.body)
 
