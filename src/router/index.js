@@ -14,6 +14,13 @@ import FM from '../views/FM'
 import DayRecommend from '../views/DayRecommend'
 import HotRanking from '../views/HotRanking'
 
+// 音乐播放器
+import MusicPlayer from '../views/MusicPlayer'
+
+// 歌单详细
+
+import PlayList from '../components/list/PlayList'
+
 const routes = [
     {
         path: '/home',
@@ -26,7 +33,7 @@ const routes = [
                 component: Main,
                 children: [
                     { path: 'styleRecommend', name: 'StyleRecommend', component: StyleRecommend },
-                    { path: 'songList', name: 'SongList', component: SongList },
+                    {  path: 'songList', name: 'SongList', component: SongList },
                     { path: 'anchorStation', name: 'AnchorStation', component: AnchorStation },
                     { path: 'rankingList', name: 'RankingList', component: RankingList }
                 ]
@@ -60,12 +67,22 @@ const routes = [
                 path: 'hotRanking',
                 name: 'HotRanking',
                 component: HotRanking
+            },
+            {
+                 path: 'playList', 
+                 name: 'PlayList', 
+                 component: PlayList
             }
         ]
     },
     {
         path: '/',
         redirect: '/home'
+    },
+    {
+        path: '/musicPlayer',
+        name: 'MusicPlayer',
+        component: MusicPlayer
     }
 ]
 

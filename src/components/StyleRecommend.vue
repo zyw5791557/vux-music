@@ -9,11 +9,13 @@
                 <p>{{ item.name }}</p>
             </tab-item>
         </tab>
+        <grid-list :data="recommendListData"></grid-list>
     </div>
 </template>
 
 <script>
 import { Swiper, Tab, TabItem } from 'vux'
+import GridList from '../components/list/GridList'
 const baseList = [{
     url: 'javascript:',
     img: '/static/banner/1.jpg',
@@ -74,13 +76,20 @@ export default {
     components: {
         Swiper,
         Tab,
-        TabItem
+        TabItem,
+        GridList
     },
     data() {
         return {
             styleRecommend_list: urlList,
             styleRecommend_index: 0,
-            styleRecommendItems: styleRecommendItemsList
+            styleRecommendItems: styleRecommendItemsList,
+            // recommendList: ''
+        }
+    },
+    computed: {
+        recommendListData() {
+             return this.$http('/api/gridList/')
         }
     },
     methods: {
@@ -90,13 +99,18 @@ export default {
         onItemClick(i) {
             this.$router.push({name: i.pathName});
         }
+    },
+    mounted() {
+        
     }
 }
 </script>
 
 <style lang="less" scoped>
 .styleRecommend {
+    overflow-y: auto!important; 
     width: 100%;
+    height: 100%;
     .styleRecommendItems {
         height: auto;
         .tabItems {

@@ -2,27 +2,15 @@
     <div>
         <div class="content">
             <transition :name="transitionName">
-                <keep-alive>
+                 <keep-alive> 
                     <router-view class="Router"></router-view>
-                </keep-alive>
+                 </keep-alive> 
             </transition>
         </div>
         <tabbar class="tabbarTheme">
-            <tabbar-item selected link="/home/main">
-                <img slot="icon" src="../assets/tabbarIcon/main.png">
-                <span slot="label">发现音乐</span>
-            </tabbar-item>
-            <tabbar-item link="/home/music">
-                <img slot="icon" src="../assets/tabbarIcon/music.png">
-                <span slot="label">我的音乐</span>
-            </tabbar-item>
-            <tabbar-item link="/home/friends">
-                <img slot="icon" src="../assets/tabbarIcon/friends.png">
-                <span slot="label">朋友</span>
-            </tabbar-item>
-            <tabbar-item badge="7" link="/home/account">
-                <img slot="icon" src="../assets/tabbarIcon/account.png">
-                <span slot="label">账号</span>
+            <tabbar-item v-for="(item, index) in tabbarItems" :selected="index === 0" :link="{ name: item.pathName }" replace :badge="item.badge">
+                <img slot="icon" :src="item.pathImg">
+                <span slot="label">{{ item.name }}</span>
             </tabbar-item>
         </tabbar>
     </div>
@@ -34,6 +22,12 @@ window.onresize = function () {
     document.getElementsByTagName('body')[0].style.height = document.documentElement.clientHeight + 'px';
     document.getElementsByTagName('body')[0].style.width = document.documentElement.clientWidth + 'px';
 }
+const tabbarList = [
+    { name: '发现音乐', pathName: 'StyleRecommend', pathImg: '/static/tabbarIcon/main.png', badge: null },
+    { name: '我的音乐', pathName: 'Music', pathImg: '/static/tabbarIcon/music.png', badge: null },
+    { name: '朋友', pathName: 'Friends', pathImg: '/static/tabbarIcon/friends.png', badge: null },
+    { name: '账号', pathName: 'Account', pathImg: '/static/tabbarIcon/account.png', badge: '7' }
+]
 import { XHeader, Tabbar, TabbarItem, XInput } from 'vux'
 export default {
     components: {
@@ -44,7 +38,9 @@ export default {
     },
     data() {
         return {
-            transitionName: 'slide-right'  // 默认动态路由变化为slide-right
+            transitionName: 'slide-right',  // 默认动态路由变化为slide-right
+            tabbarItems: tabbarList,
+            tabbarPreIndex: 0,
         }
     },
     watch: {
@@ -62,7 +58,7 @@ export default {
 
     },
     mounted() {
-
+        this.$router.push({ name: 'StyleRecommend' })
     }
 }
 </script>
@@ -90,6 +86,7 @@ export default {
 .Router {
     position: absolute;
     width: 100%;
+    height: 100%;
     transition: all .5s ease;
 }
 
@@ -106,32 +103,18 @@ export default {
 }
 </style>
 <style>
-body {
-    overflow: hidden;
-}
-
 .header {
     height: 7vh;
 }
 
 .content {
-    height: 93vh;
-    overflow-y: scroll;
+    position: relative;
+    height: 100%;
 }
 
 .vux-header-right {
     top: 10px!important;
     right: 10px!important;
-}
-
-.musicHouse {
-    background-image: url('../assets/tabbarIcon/musicHouse.png');
-    background-size: 27px 27px;
-    display: inline-block;
-    width: 27px;
-    height: 27px;
-    text-indent: 10000px;
-    overflow: hidden;
 }
 
 input::-webkit-input-placeholder {

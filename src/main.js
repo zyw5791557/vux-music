@@ -9,6 +9,11 @@ import routes from './router/index'
 // vuex
 import Vuex from 'vuex'
 
+// axios
+import { AjaxPlugin } from 'vux'
+
+Vue.use(AjaxPlugin)
+
 Vue.use(Vuex)
 
 Vue.use(VueRouter)
