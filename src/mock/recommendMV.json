@@ -1,0 +1,36 @@
+{
+	"author": "Emlice",
+	"listName": "推荐MV",
+	"pathName": "RecommendMV",
+	"itemPathName": "RecommendMV",
+	"list2": [
+		{	
+			"id": "0592-rmv-1",
+            "title": "侦探C",
+            "author": "陈楚生&SPY.C",
+			"pathImg": "/static/list/recommendMV/1.png",
+			"hot": "11756"
+		},
+		{
+			"id": "0592-rmv-2",
+			"title": "What About Us (歌词版)",
+            "author": "P!nk",
+			"pathImg": "/static/list/recommendMV/2.png",
+			"hot": "35692"
+		},
+		{
+			"id": "0592-rmv-3",
+			"title": "一直走",
+            "author": "A-Lin",
+			"pathImg": "/static/list/recommendMV/3.png",
+			"hot": "11万"
+		},
+		{
+			"id": "0592-rmv-4",
+			"title": "小情歌",
+            "author": "苏打绿",
+			"pathImg": "/static/list/recommendMV/4.png",
+			"hot": "142万"
+		}
+	]
+}

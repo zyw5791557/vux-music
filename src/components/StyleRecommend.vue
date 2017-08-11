@@ -9,7 +9,10 @@
                 <p>{{ item.name }}</p>
             </tab-item>
         </tab>
-        <grid-list :data="recommendListData"></grid-list>
+        <grid-list :data3="recommendListData"></grid-list>
+        <grid-list :dataN="exclusiveListData"></grid-list>
+        <grid-list :data3="latestListData"></grid-list>
+        <grid-list :data2="recommendMVData"></grid-list>
     </div>
 </template>
 
@@ -89,7 +92,16 @@ export default {
     },
     computed: {
         recommendListData() {
-             return this.$http('/api/gridList/')
+             return this.$http('/api/gridList')
+        },
+        exclusiveListData() {
+            return this.$http('/api/exclusiveList')
+        },
+        latestListData() {
+            return this.$http('/api/latestList')
+        },
+        recommendMVData() {
+            return this.$http('/api/recommendMV')
         }
     },
     methods: {
@@ -111,6 +123,8 @@ export default {
     overflow-y: auto!important; 
     width: 100%;
     height: 100%;
+    box-sizing: border-box;
+    padding-bottom: 150px;
     .styleRecommendItems {
         height: auto;
         .tabItems {

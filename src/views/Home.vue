@@ -103,9 +103,6 @@ export default {
 }
 </style>
 <style>
-.header {
-    height: 7vh;
-}
 
 .content {
     position: relative;

@@ -1,0 +1,23 @@
+{
+	"author": "Emlice",
+	"listName": "独家放送",
+	"pathName": "Exclusive",
+	"itemPathName": "Exclusive",
+	"listN": [
+		{	
+			"id": "0592-el-1",
+			"title": "年年考第一的川大女学神, 写起歌来好听哭了！",
+			"pathImg": "/static/list/exclusiveList/1.png"
+		},
+		{
+			"id": "0592-el-2",
+			"title": "领券立减10元, 7件新款T恤免费送！",
+			"pathImg": "/static/list/exclusiveList/2.png"
+		},
+		{
+			"id": "0592-el-3",
+			"title": "九分钟速成教程, 学会《Halo》不是梦！",
+			"pathImg": "/static/list/exclusiveList/3.png"
+		}
+	]
+}

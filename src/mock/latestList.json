@@ -1,0 +1,44 @@
+{
+	"author": "Emlice",
+	"listName": "最新音乐",
+	"pathName": "LatestList",
+	"itemPathName": "LatestList",
+	"list3": [
+		{	
+			"id": "0592-ll-1",
+            "title": "新歌推荐",
+            "author": "推荐合口味的新歌",
+			"pathImg": "/static/list/latestList/1.png"
+		},
+		{
+			"id": "0592-ll-2",
+			"title": "Rainbow",
+            "author": "Kesha",
+			"pathImg": "/static/list/latestList/2.png"
+		},
+		{
+			"id": "0592-ll-3",
+			"title": "Silence",
+            "author": "Marshmello/Khalid",
+			"pathImg": "/static/list/latestList/3.png"
+		},
+		{
+			"id": "0592-ll-4",
+			"title": "《九剑魔龙传》手游戏官方主题曲",
+            "author": "伦桑",
+			"pathImg": "/static/list/latestList/4.png"
+		},
+		{
+			"id": "0592-ll-5",
+			"title": "九张机",
+            "author": "锦零",
+			"pathImg": "/static/list/latestList/5.png"
+		},
+		{
+			"id": "0592-ll-6",
+			"title": "你我情歌",
+            "author": "李常超(Lao乾妈)",
+			"pathImg": "/static/list/latestList/6.png"
+		}
+	]
+}

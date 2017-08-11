@@ -2,41 +2,42 @@
 	"author": "Emlice",
 	"listName": "推荐歌单",
 	"pathName": "SongList",
-	"recommendList": [
+	"itemPathName": "PlayList",
+	"list3": [
 		{	
-			"id": "0592-1",
+			"id": "0592-rl-1",
 			"title": "回不去的村, 进不去的城",
-			"pathImg": "/static/list/1.jpg",
+			"pathImg": "/static/list/recommendList/1.jpg",
 			"hot": "32万"
 		},
 		{
-			"id": "0592-2",
+			"id": "0592-rl-2",
 			"title": "【抖腿向】嗨得一路拉风带闪电⚡⚡",
-			"pathImg": "/static/list/2.jpg",
+			"pathImg": "/static/list/recommendList/2.jpg",
 			"hot": "25万"
 		},
 		{
-			"id": "0592-3",
+			"id": "0592-rl-3",
 			"title": "［简史］从蓝调、乡村到现代摇滚乐",
-			"pathImg": "/static/list/3.jpg",
+			"pathImg": "/static/list/recommendList/3.jpg",
 			"hot": "74万"
 		},
 		{
-			"id": "0592-4",
+			"id": "0592-rl-4",
 			"title": "用50张说唱唱片去品味诗意Flow",
-			"pathImg": "/static/list/4.jpg",
+			"pathImg": "/static/list/recommendList/4.jpg",
 			"hot": "64万"
 		},
 		{
-			"id": "0592-5",
+			"id": "0592-rl-5",
 			"title": "一梦千载 再忆红楼",
-			"pathImg": "/static/list/5.jpg",
+			"pathImg": "/static/list/recommendList/5.jpg",
 			"hot": "60万"
 		},
 		{
-			"id": "0592-6",
+			"id": "0592-rl-6",
 			"title": "狂想.奔放.动感.突然想学西语了！✌️",
-			"pathImg": "/static/list/6.jpg",
+			"pathImg": "/static/list/recommendList/6.jpg",
 			"hot": "62万"
 		}
 	]

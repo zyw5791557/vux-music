@@ -18,8 +18,16 @@ import HotRanking from '../views/HotRanking'
 import MusicPlayer from '../views/MusicPlayer'
 
 // 歌单详细
-
 import PlayList from '../components/list/PlayList'
+
+// 独家放送
+import Exclusive from '../components/Exclusive'
+
+// 最新音乐
+import LatestList from '../components/LatestList'
+
+// 推荐MV
+import RecommendMV from '../components/RecommendMV'
 
 const routes = [
     {
@@ -72,6 +80,21 @@ const routes = [
                  path: 'playList', 
                  name: 'PlayList', 
                  component: PlayList
+            },
+            {
+                path: 'exclusive', 
+                name: 'Exclusive', 
+                component: Exclusive
+            },
+            {
+                path: 'latestList', 
+                name: 'LatestList', 
+                component: LatestList
+            },
+            {
+                path: 'recommendMV', 
+                name: 'RecommendMV', 
+                component: RecommendMV
             }
         ]
     },
